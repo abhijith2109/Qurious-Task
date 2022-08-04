@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+
+
+</head>
+
+<body>
+<div class="container">
+<div class="row">
+    <h2 align="center">All Users</h2>
+    <div class="col-2"></div>
+
+    <div class="col-8">
+
+        <ul class="list-group list-group-light">
+            {%for user in users%}
+  <li class="list-group-item d-flex justify-content-between align-items-center">
+    <div class="d-flex align-items-center">
+      <img src="{{user.profile_pic.url}}" alt="" style="width: 45px; height: 45px"
+        class="rounded-circle" />
+      <div class="ms-3">
+        <p class="fw-bold mb-1">User Name :{{user.username}}</p>
+        <p class="text-muted mb-0">Full Name :{{user.first_name}}</p>
+          <p class="text-muted mb-0"> Email :{{user.email}}</p>
+          <p class="text-muted mb-0">Contact Number :{{user.phone}}</p>
+
+        <p class="text-muted mb-0">Role :{{user.role}}</p>
+
+      </div>
+    </div>
+    <a class="btn btn-link btn-rounded btn-sm" href="#" role="button">Edit</a>
+  </li>
+            {%endfor%}
+
+</ul>
+
+    </div>
+    <div class="col-2"></div>
+</div>
+</div>
+</body>
+
+</html>
